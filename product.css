@@ -1,0 +1,130 @@
+/* ----------------------------------------------------------------------------product.css---------------------------------------------------------------------------*/  
+  
+body, html {  
+    margin: 0;  
+    padding: 0;  
+    height: 100%;  
+    font-family: Arial, sans-serif;  
+}  
+  
+.products-container {  
+    display: flex;  
+    flex-wrap: wrap; /* 允许产品换行 */  
+    justify-content: center; /* 水平居中 */  
+    padding: 20px; /* 容器内边距 */  
+}  
+  
+.product {  
+    margin: 10px; /* 产品之间的间距 */  
+    /*flex: 0 0 calc(33.33% - 20px); /* 大屏幕上每行显示3个产品 */  
+    /*max-width: calc(33.33% - 20px);  */
+    max-width: 100%;
+    flex: 0 0 100%;
+}  
+  
+/* 产品容器 */  
+.product-container {  
+    position: relative;  
+    height: auto; /* 根据需要调整产品容器高度 */  
+    overflow: hidden;  
+}  
+  
+/* 产品图片 */  
+.product-image {  
+    width: 100%;  
+    height: auto;  
+    display: block;  
+}  
+  
+/* ------------------------------------------------------------------------------产品介绍覆盖层------------------------------------------------------------------- */  
+.product-overlay {  
+    position: absolute;  
+    top: 0;  
+    left: 50%;  
+    width: 50%;  
+    height: 100%;  
+    display: flex;  
+    flex-direction: column;  
+    justify-content: center; /* 垂直居中 */  
+    align-items: center; /* 水平靠右 */  
+    background-color: rgba(0, 0, 0, 0.1); /* 半透 */  
+    color: #fff;  
+    padding: 20px; /* 内边距 */  
+    box-sizing: border-box;  
+    text-align: center; /* 文本水平居中 */  
+}  
+  
+.product-overlay-right {  
+    position: absolute;  
+    top: 0;  
+    left: 0; 
+    width: 50%;  
+    height: 100%;  
+    display: flex;  
+    flex-direction: column;  
+    justify-content: center; 
+    align-items: center; 
+    background-color: rgba(0, 0, 0, 0.2); /* 半透 */  
+    color: #fff;  
+    padding: 20px; 
+    box-sizing: border-box;  
+    text-align: center; 
+}  
+
+/* ---------------------------------------------------产品标题、描述和购买按钮-----------------------------------------*/  
+.product-title {  
+    font-size: 2.5em; /* 根据需要调整字体大小 */  
+    margin-bottom: 10px;  
+}  
+  
+.product-description {  
+    font-size: 1.5em;  
+    line-height: 1.5;  
+}  
+  
+.buy-button {  
+    display: inline-block;  
+    padding: 10px 20px;  
+    background-color: #de634f;  
+    color: #fff;  
+    text-decoration: none;  
+    border-radius: 5px;  
+    margin-top: 20px;  
+    transition: background-color 0.3s ease;  
+}  
+  
+.buy-button:hover {  
+    background-color: #c9533e;  
+}  
+  
+ /* ---------------------------------------------------------------页脚--------------------------------------------------------- */  
+ footer {  
+    text-align: center; /* 使文本居中 */  
+    background-color: #f5f5f5; /* 可选：为页脚添加背景色（如果需要的话） */  
+    padding: 20px 0; /* 为页脚添加内边距，使文本不会紧贴着边界 */  
+}  
+
+/* ---------------------------------------------------------------页脚文本----------------------------------------------------- */  
+footer p {  
+    color: #888; 
+    font-size: 12px; 
+    margin: 0; 
+}  
+
+/* ----------------------------------------------------------------响应式布局---------------------------------------------------*/  
+@media (max-width: 768px) {  
+    .products-container {  
+        padding: 10px; /* 内边距 */  
+    }  
+      
+    .product {  
+        flex: 1 0 100%; /* 每个产品占满一行 */  
+        max-width: 100%;  
+        margin: 10px 0; /* 仅上下有间距 */  
+    }  
+      
+    .product-overlay {  
+        align-items: center; /* 小屏幕下水平居中 */  
+        text-align: center; /* 小屏幕下文本水平居中 */  
+    }  
+}

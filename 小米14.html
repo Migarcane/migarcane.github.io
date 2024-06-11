@@ -1,0 +1,154 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Xiaomi 14</title>  
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
+<link rel="stylesheet" href="details.css"> 
+<style>  
+    table {  
+      border-collapse: collapse;  
+      width: 100%;  
+    }  
+    th, td {  
+      text-align: left;  
+      padding: 8px;  
+      border: 1px solid #ddd;  
+    }  
+    th {  
+      background-color: #f2f2f2;  
+    }  
+  </style>  
+</head>  
+<body>  
+  <p><a href="主页导购.html">点此返回导购主页</a></p> 
+  <div class="vertical-section specs-container">  
+    <div class="specs-container">  
+        <div class="specs-left">  
+            <img src="图片/XM14-LOGO.png" alt="Features Header" class="features-header"> 
+            <div class="features-list">  
+             <h2>Xiaomi 14 </h2>  
+            <ul>  
+              <li>1.5K 超视感屏</li>  
+              <li>第三代骁龙®8移动平台｜动态性能调度 4.0</li>  
+              <li> LPDDR5X + UFS 4.0 + FBO 焕新存储</li>  
+              <li>90W 小米澎湃有线秒充 / </li>  
+              <li>50W 小米澎湃无线秒充 / 无线反充</li>  
+              <li>徕卡光学 Summilux镜头 | </li>  
+            </ul>  
+          </div>  
+        <div class="specs-right">  
+          <img src="图片/xm14.png" alt="Xiaomi 14 Phone">  
+        </div>  
+      </div>  
+<div class="vertical-section"> 
+
+  <h1>小米14参数表格</h1>  
+  
+  <table>  
+    <tr>  
+      <th>类别</th>  
+      <th>参数</th>  
+    </tr>  
+    <tr>  
+      <td>性能</td>  
+      <td>  
+        <ul>  
+          <li>芯片：骁龙8 Gen 3</li>  
+          <li>内存：LPDDR5X RAM + UFS 4.0 ROM</li>  
+        </ul>  
+      </td>  
+    </tr>  
+    <tr>  
+      <td>屏幕</td>  
+      <td>  
+        <ul>  
+          <li>类型：全面屏</li>  
+          <li>尺寸、分辨率：6.36英寸 OLED，2670x 1200</li>  
+          <li>刷新率：120Hz</li>  
+          <li>触控采样率：最高 240Hz</li>  
+          <li>峰值亮度：3000nit</li>  
+        </ul>  
+      </td>  
+    </tr>  
+    <tr>  
+      <td>电池</td>  
+      <td>  
+        <ul>  
+          <li>电池容量：4610mAh(typ) / 4490mAh(min)  </li>  
+          <li>充电规格：90W 小米澎湃有线秒充 </li>  
+          <li>无线充电：50W 小米澎湃无线秒充 / 无线反充</li>  
+        </ul>  
+      </td>  
+    </tr>  
+    <tr>  
+      <td>影像系统</td>  
+      <td>  
+        <ul>  
+          <li>5000万 徕卡超动态主摄：光影猎人900 定制影像传感器</li>  
+          <li>5000万 徕卡超广角：f/2.2 大光圈｜等效14mm焦距｜115° 超广视角</li>  
+        </ul>  
+      </td>  
+    </tr>  
+    <tr>  
+      <td>连接性</td>  
+      <td>5G网络，Wi-Fi 6E，蓝牙5.3等</td>  
+    </tr>  
+  </table>  
+    
+<div class="vertical-section product-details"> 
+<div class="product-details">  
+  <div class="product-options">  
+    <h3>选择内存版本</h3>  
+    <label><input type="radio" name="memory" value="64GB"> 12+256GB</label><br>  
+    <label><input type="radio" name="memory" value="64GB"> 12+512GB</label><br> 
+    <label><input type="radio" name="memory" value="128GB"> 16+512GB</label><br>  
+    <label><input type="radio" name="memory" value="256GB"> 16+1TB</label>  
+  </div>  
+  <div class="order-form">  
+    <h3>填写收货信息</h3>  
+    <input type="text" id="address" placeholder="地址">  
+    <input type="text" id="phone" placeholder="手机号">  
+    <button class="order-button" id="order-btn">确认订购</button>  
+    <div class="success-message" id="success-message">订购成功，请等待快递。</div>  
+  </div>  
+</div>  
+  
+
+<p><a href="https://www.mi.com/xiaomi-14">点此访问小米商城Xiaomi 14</a>，此网站所有素材均来源于互联网，仅作用于学习交流</p> 
+
+<script>  
+$(document).ready(function() {  
+  $('#order-btn').click(function(e) {  
+    e.preventDefault(); // 阻止表单默认提交行为  
+
+ // 检查是否选择了内存版本  
+ var selectedMemory = $('input[name="memory"]:checked').val();  
+    if (!selectedMemory) {  
+      alert('请选择内存版本！');  
+      return;  
+    }  
+  
+    // 检查地址是否为空  
+    var address = $('#address').val().trim();  
+    if (!address) {  
+      alert('地址不能为空！');  
+      return;  
+    }  
+  
+    // 检查手机号是否为11位  
+    var phone = $('#phone').val().trim();  
+    if (phone.length !== 11) {  
+      alert('手机号必须是11位数字！');  
+      return;  
+    }  
+  
+    // 如果所有验证都通过，显示成功消息  
+    $('#success-message').fadeIn();  
+  
+  });  
+});  
+</script>  
+</body>  
+</html>
